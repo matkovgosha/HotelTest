@@ -1,0 +1,197 @@
+.Room-Wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.BackButton{
+	margin-top: 50px;
+	margin-bottom: 40px;
+	color: #F2994A;
+	font-weight: 700;
+	cursor:pointer;
+}
+
+a{
+	text-decoration: none;
+}
+
+.BackButton span{
+	margin-right:5px;
+}
+
+.Main-Info{
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content: space-between;
+	color: #4F4F4F;
+} 
+
+.img img{
+	width: 238px;
+	height: 172px;
+}
+.img .Room-Img1 img{
+	width: 150px;
+	height: 90px;
+}
+
+.Short-img{
+	display:flex;
+	justify-content: space-between;
+}
+.img .Room-Img2 img{
+	width: 84px;
+	height: 43px;
+}
+
+.img .Room-Img3 img{
+	width: 84px;
+	height: 43px;
+}
+
+.Room-text{
+	width: 473px;
+}
+
+.Room-text p{
+	font-size: 14px;
+	margin-top:20px;
+}
+
+.Room-text h2{
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.Room-text h3{
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.Room-text ul{
+	display:flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin-bottom: 15px;	
+}
+
+.Room-text li{
+	font-weight: bold;
+}
+
+.Room-text li p img{
+	width: 13px;
+	height: 15px;
+	margin-right: 10px;
+}
+
+.Room-text select{
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 19px;
+	margin-top: 10px;
+	color: #F2994A;
+
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #828282;
+}
+
+.Room-text select option{            /* отцентрировать*/
+	color: #828282;
+	background: #E0E0E0;
+}
+
+.SelectionPanel{
+	width: 238px;
+	height: 275px;
+	border: 1px solid #828282;
+	box-sizing: border-box;
+	border-radius: 3px;
+	padding:10px 15px;
+}
+
+.SelectionPanel h3{
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.SelectionPanel li p img{
+	width: 13px;
+	height: 15px;
+	margin-right: 10px;
+	margin-top:10px;
+}
+
+.SelectionPanel .flex{
+	display: flex;
+	justify-content: space-between;	
+}
+
+.SelectionPanel .DaysChoice{
+	margin-top: 16px;
+}
+
+.SelectionPanel .DaysChoice span{
+	font-size: 20px;
+	font-weight: bold;
+	color: #F2994A;
+	margin-left: 35px;
+}
+
+.SelectionPanel .DaysChoice hr{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.SelectionPanel .DaysChoice img{
+	float:right;
+	margin-top: -5px;
+	cursor: pointer;
+}
+
+.test{
+	margin-top: 0px !important;
+	transform: rotate(180deg);
+}
+
+.SelectionPanel hr{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.SelectionPanel .Sum-text{
+	width: 100%;
+	height: 42px;
+}
+
+.SelectionPanel .Sum-text p{
+	float:right;
+}
+
+.SelectionPanel .Sum{
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.SelectionPanel button{
+	background: #F2994A;
+	padding: 8px 60px;
+	border: none;
+	margin-top:7px;
+	margin-left:-3px;
+	cursor:pointer;
+
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	color: #FFFFFF;
+}

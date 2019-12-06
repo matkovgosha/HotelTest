@@ -1,0 +1,10 @@
+.short-head{
+  margin-top: -5px;
+  background: url(./Head.png) no-repeat;
+  background-size: cover;
+  height: 115px;
+}
+
+p{
+	display: inline;
+}
