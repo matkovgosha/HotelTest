@@ -8,7 +8,7 @@ const App = () => {
   return (
     <main role="main" className="container">
       <Switch>
-        <Route
+        <Route 
           path="/"
           component={HomePage}
           exact />
