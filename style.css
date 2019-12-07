@@ -121,7 +121,7 @@ body {
 
 .head {
   margin-top: -5px;
-  background: url(../img/Head.png) no-repeat;
+  background: url(./img/Head.png) no-repeat;
   background-size: cover;
   height: 450px;
   background-position: 50% 100%;
