@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/HotelTest/static/js/runtime~main.0867bed4.js"
   },
   {
-    "revision": "78c00b7471a2907a147e",
-    "url": "/HotelTest/static/js/main.78c00b74.chunk.js"
+    "revision": "ea1c27093f67242bedd8",
+    "url": "/HotelTest/static/js/main.ea1c2709.chunk.js"
   },
   {
     "revision": "c8c76e662c369b23eb2d",
     "url": "/HotelTest/static/js/1.c8c76e66.chunk.js"
   },
   {
-    "revision": "78c00b7471a2907a147e",
-    "url": "/HotelTest/static/css/main.65480e1b.chunk.css"
+    "revision": "ea1c27093f67242bedd8",
+    "url": "/HotelTest/static/css/main.aa03c547.chunk.css"
   },
   {
-    "revision": "9b9f94bde95324daf1f2ca1291b16e06",
+    "revision": "cb16190d527d0c97fa1cd89c0219cc0b",
     "url": "/HotelTest/index.html"
   }
 ];
