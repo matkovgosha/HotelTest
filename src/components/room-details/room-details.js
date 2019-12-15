@@ -20,25 +20,24 @@ class RoomDetails extends Component {
 
     const {hotelstoreService, itemId} = this.props;
     const {price} = hotelstoreService.getRoom(parseInt(itemId.itemId));
-    const { SumPrice, DaysToBook } = this.state;
+    //const { SumPrice, DaysToBook } = this.state;
 
     this.setState({
+      StartPrice: price,
       Price: price,
       SumPrice: 0
     })
-    // const {
-    //   hotelstoreService
-    //   } = this.props;
-
-    //console.log(hotelstoreService.getRoom(1));
   }
 
-  // PriceChange(value){
-  //   console.log(value);
-  //   this.setState({
-  //     Price: this.state.Price + 1
-  //   })
-  // }
+  PriceChange(){ //Убрать костыли
+    let k1 = (document.getElementById('select1').value === 'true') ? 100 : 0;
+    let k2 = (document.getElementById('select2').value === 'true') ? 100 : 0;
+    let k3 = (document.getElementById('select3').value === 'true') ? 100 : 0;
+
+    this.setState({
+      Price: this.state.StartPrice + k1 + k2 + k3 
+    })
+  }
 
   AddDay(){
     this.setState({
@@ -60,9 +59,9 @@ class RoomDetails extends Component {
 
   const {hotelstoreService, itemId} = this.props;  //удалить, добавить this
 
-  const { title,price,coverImage} = hotelstoreService.getRoom(parseInt(itemId.itemId)); //это удалить и добавить в return this, coverImage не грузится
+  const { title,coverImage} = hotelstoreService.getRoom(parseInt(itemId.itemId)); //это удалить и добавить в return this, coverImage не грузится
 
-
+//Поправить смазанную картинку
   return(
   	<div className = "Room-Wrapper">
   		<Link to="/">
@@ -70,12 +69,12 @@ class RoomDetails extends Component {
       </Link>
   		<div className = "Main-Info">
   			<div className = "img">
-  				<img src = {coverImage} alt="Room"/>
+  				<img src = {coverImage} alt="Room"/>       
           <div className = "Short-img">
-            <div className = "Room-Img1"><img src = "img/Room1-1.png" alt="Room"/></div>
+            <div className = "Room-Img1"><img src = "../img/Room1-1.png" alt="Room"/></div>
             <div>
-              <div className = "Room-Img2"><img src = "img/Room1-2.png" alt="Room"/></div>
-              <div className = "Room-Img3"><img src = "img/Room1-3.png" alt="Room"/></div>
+              <div className = "Room-Img2"><img src = "../img/Room1-2.png" alt="Room"/></div>
+              <div className = "Room-Img3"><img src = "../img/Room1-3.png" alt="Room"/></div>
             </div>
           </div>
   			</div>
@@ -84,25 +83,27 @@ class RoomDetails extends Component {
   				<h3>Доступные удобства</h3>
   				<ul>
   					<li>
-  						<p><img src = "img/Wifi.svg" alt="Wi-Fi"/>Wi-Fi</p>
-  						<select name="wi-fi" size="1">
-						    <option defaultValue="true">Присутствует</option>
+  						<p><img src = "../img/Wifi.svg" alt="Wi-Fi"/>Wi-Fi</p>
+  						<select id = "select1" name="wi-fi" size="1"
+                onChange={() => this.PriceChange()}>
 						    <option value="false">Отсутствует</option>
+                <option value="true">Присутствует</option>
 					    </select>
   					</li>
   					<li>
-  						<p><img src = "img/Food.svg" alt="Food"/>Питание</p>
-  						<select name="wi-fi" size="1">
-						    <option defaultValue="1">Только завтрак</option>
-						    <option value="2">2-х разовое</option> 
-						    <option  value="3">3-х разовое</option>
+  						<p><img src = "../img/Food.svg" alt="Food"/>Питание</p>
+  						<select id = "select2" name="wi-fi" size="1" 
+                onChange={() => this.PriceChange()}>
+                <option value="false">Отсутствует</option>
+                <option value="true">Присутствует</option> 
 					    </select> 						
   					</li>
   					<li>
-  						<p><img src = "img/Vine.svg" alt="Mini-Bar"/>Минибар</p>
-  						<select name="wi-fi" size="1">
-						    <option defaultValue="true">Присутствует</option>
+  						<p><img src = "../img/Vine.svg" alt="Mini-Bar"/>Минибар</p>
+  						<select id = "select3" name="wi-fi" size="1"
+                onChange={() => this.PriceChange()}>
 						    <option value="false">Отсутствует</option>
+                <option value="true">Присутствует</option>
 					    </select>						
   					</li>
   				</ul>
@@ -118,20 +119,20 @@ class RoomDetails extends Component {
           <div className = "flex">
             <ul>
               <li>
-                <p><img src = "img/Wifi.svg" alt="Wi-Fi"/>Wi-Fi</p>
+                <p><img src = "../img/Wifi.svg" alt="Wi-Fi"/>Wi-Fi</p>
               </li>
               <li>
-                <p><img src = "img/Food.svg" alt="Food"/>Питание</p>           
+                <p><img src = "../img/Food.svg" alt="Food"/>Питание</p>           
               </li>
               <li>
-                <p><img src = "img/Vine.svg" alt="Mini-Bar"/>Минибар</p>            
+                <p><img src = "../img/Vine.svg" alt="Mini-Bar"/>Минибар</p>            
               </li>
             </ul>
             <div className = "DaysChoice">
               <span>{this.state.DaysToBook}</span>
-              <img className = "test" src = "img/ChoseArrow.svg" alt = "up"
+              <img className = "test" src = "../img/ChoseArrow.svg" alt = "up"
                 onClick={() => this.AddDay()}/><br/>
-              <img src = "img/ChoseArrow.svg" alt = "down"
+              <img src = "../img/ChoseArrow.svg" alt = "down"
                 onClick={() => this.RemoveDay()}/>
               <hr/>
               <p><b>{this.state.Price}</b> за ночь</p>
@@ -139,7 +140,7 @@ class RoomDetails extends Component {
           </div>
           <hr/>
          <div className = "Sum-text">
-            <p className = "Sum">{this.state.SumPrice} ₽</p>
+            <p className = "Sum">{this.state.SumPrice}  &#36;</p>
             <p>Стоимость проживания</p>
           </div>
           <button>Забронировать</button>

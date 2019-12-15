@@ -21,7 +21,7 @@ const RoomListItem = ({ room }) => {
             
             >Забронировать</button>
           </Link>
-          <p className = "price">{price}₽ за ночь</p>
+          <p className = "price">{price}&#36; за ночь</p>
         </div>
       );
 };

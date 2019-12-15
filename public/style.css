@@ -224,6 +224,7 @@ body {
 }
 
 .items .item .price {
+  margin-left: 10px;
   padding: 10px 36px;
   font-family: Roboto;
   font-style: normal;

@@ -1,6 +1,6 @@
 .short-head{
   margin-top: -5px;
-  background: url(./Head.png) no-repeat;
+  background: url(../img/Head.png) no-repeat;
   background-size: cover;
   height: 115px;
 }

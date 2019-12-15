@@ -9,7 +9,7 @@ const ShortHeader = () => {
 	<div className="short-head">
 		<div className="logo">
 			<Link to = "/">
-				 <img src = "img/Logo.svg" alt="Logo"/><br/>
+				 <img src = "../img/Logo.svg" alt="Logo"/><br/>
 				 <p>Chikibambony</p>
 			</Link>
 		</div>
