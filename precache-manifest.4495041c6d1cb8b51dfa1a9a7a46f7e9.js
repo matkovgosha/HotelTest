@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/HotelTest/static/css/main.bfe57639.chunk.css"
   },
   {
-    "revision": "3484a0e09f4322efa0b98b6f1a90ba3f",
+    "revision": "b31f1e58ed8a76c3914f222225a1db0b",
     "url": "/HotelTest/index.html"
   }
 ];
