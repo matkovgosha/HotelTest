@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const RoomListItem = ({ room }) => {
-  const { title, price, coverImage } = room;
+  const { id, title, price, coverImage } = room;
+
+  const newPath = "room/" + id;
+
+
   return (
         <div className="item">
           <img src = {coverImage} alt="Room"/>
@@ -12,8 +16,10 @@ const RoomListItem = ({ room }) => {
           <div className="room-bonus"><img src = "img/Food.svg" alt="Food"/>3x разовое</div>
           <div className="room-bonus"><img src = "img/Vine.svg" alt="Mini-Bar"/>Минибар</div>
 
-          <Link to="/room">
-            <button id ="BookButton">Забронировать</button>
+          <Link to = {newPath} >
+            <button id ="BookButton"
+            
+            >Забронировать</button>
           </Link>
           <p className = "price">{price}₽ за ночь</p>
         </div>
@@ -22,4 +28,4 @@ const RoomListItem = ({ room }) => {
 
 
 
-export default RoomListItem;
+export default withRouter(RoomListItem);

@@ -74,37 +74,3 @@ export default compose(
   withHotelstoreService(),
   connect(mapStateToProps, mapDispatchToProps)
 )(RoomList);
-
-
- /* const RoomList = ({title}) => {
-
-      return(
-          <div className="wrapper">
-            <div className="rooms">
-              <p className = "rooms-text">{title}</p>
-              <div className="items">
-                <RoomListItem />
-                <RoomListItem />
-                <RoomListItem />
-                <RoomListItem />
-                <RoomListItem />
-              </div>
-            </div>
-          </div>
-      );
-  }
-*/
-  //export default RoomList;
-
-
-
-
-
-
-                //   {
-                //   rooms.map((room) => {
-                //     return (
-                //       <RoomListItem key={room.id} room={room}/>
-                //     )
-                //   })
-                // }

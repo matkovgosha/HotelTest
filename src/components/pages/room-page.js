@@ -3,11 +3,12 @@ import React from 'react';
 import ShortHeader from '../short-header';
 import RoomDetails from '../room-details';
 
-const RoomPage = () => {
+const RoomPage = (itemId) => {
+	
   return(
   	<div>
 	  	<ShortHeader />
-	  	<RoomDetails />
+	  	<RoomDetails itemId = {itemId}/>
   	</div>
   );
 };

@@ -10,7 +10,7 @@ const HomePage = () => {
       <RoomList type = {'lux'} descr = "Номера люкс (5)" />
       <RoomList type = {'two'} descr = "Двухместные номера (25)" />
       <RoomList type = {'three'} descr = "Трехместные номера (5)" />
-      <RoomList type = {'three'} descr = "Одноместные номера (15)" />
+      <RoomList type = {'one'} descr = "Одноместные номера (15)" />
       <HotelFooter />
     </div>
   );

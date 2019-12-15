@@ -1,10 +1,68 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { withHotelstoreService } from '../hoc';
+import { compose } from '../../utils';
+import { connect } from 'react-redux';
+
 import './room-details.css';
 
-const RoomDetails = () => {
+class RoomDetails extends Component {
+
+
+  state = {
+    SumPrice: 0,
+    DaysToBook: 0
+  }
+
+  componentDidMount() {
+
+    const {hotelstoreService, itemId} = this.props;
+    const {price} = hotelstoreService.getRoom(parseInt(itemId.itemId));
+    const { SumPrice, DaysToBook } = this.state;
+
+    this.setState({
+      Price: price,
+      SumPrice: 0
+    })
+    // const {
+    //   hotelstoreService
+    //   } = this.props;
+
+    //console.log(hotelstoreService.getRoom(1));
+  }
+
+  // PriceChange(value){
+  //   console.log(value);
+  //   this.setState({
+  //     Price: this.state.Price + 1
+  //   })
+  // }
+
+  AddDay(){
+    this.setState({
+      SumPrice: this.state.SumPrice + this.state.Price,
+      DaysToBook: this.state.DaysToBook + 1 
+    })
+  }
+
+  RemoveDay(){
+    if(this.state.DaysToBook>0){
+      this.setState({
+        SumPrice: this.state.SumPrice - this.state.Price,
+        DaysToBook: this.state.DaysToBook - 1 
+      })
+    }
+  }
+
+  render() {
+
+  const {hotelstoreService, itemId} = this.props;  //удалить, добавить this
+
+  const { title,price,coverImage} = hotelstoreService.getRoom(parseInt(itemId.itemId)); //это удалить и добавить в return this, coverImage не грузится
+
+
   return(
   	<div className = "Room-Wrapper">
   		<Link to="/">
@@ -12,7 +70,7 @@ const RoomDetails = () => {
       </Link>
   		<div className = "Main-Info">
   			<div className = "img">
-  				<img src = "img/Room2.png" alt="Room"/>
+  				<img src = {coverImage} alt="Room"/>
           <div className = "Short-img">
             <div className = "Room-Img1"><img src = "img/Room1-1.png" alt="Room"/></div>
             <div>
@@ -22,7 +80,7 @@ const RoomDetails = () => {
           </div>
   			</div>
   			<div className = "Room-text">
-  				<h2>Двухместный номер Rosa tree</h2>
+  				<h2>Номер {title}</h2>
   				<h3>Доступные удобства</h3>
   				<ul>
   					<li>
@@ -70,26 +128,39 @@ const RoomDetails = () => {
               </li>
             </ul>
             <div className = "DaysChoice">
-              <span>16</span>
-              <img className = "test" src = "img/ChoseArrow.svg" alt = "up"/><br/>
-              <img src = "img/ChoseArrow.svg" alt = "down"/>
+              <span>{this.state.DaysToBook}</span>
+              <img className = "test" src = "img/ChoseArrow.svg" alt = "up"
+                onClick={() => this.AddDay()}/><br/>
+              <img src = "img/ChoseArrow.svg" alt = "down"
+                onClick={() => this.RemoveDay()}/>
               <hr/>
-              <p><b>1 214p</b> за ночь</p>
+              <p><b>{this.state.Price}</b> за ночь</p>
             </div>
           </div>
           <hr/>
          <div className = "Sum-text">
-            <p className = "Sum">19 424р</p>
+            <p className = "Sum">{this.state.SumPrice} ₽</p>
             <p>Стоимость проживания</p>
           </div>
           <button>Забронировать</button>
   			</div>
   		</div>
-	</div>
-
+	  </div>
   );
+ }
+}
+
+
+const mapStateToProps = ({ error }) => {
+  return { error };
 };
 
-export default RoomDetails;
 
+const mapDispatchToProps = {
 
+};
+
+export default compose(
+  withHotelstoreService(),
+  connect(mapStateToProps, mapDispatchToProps)
+)(RoomDetails);

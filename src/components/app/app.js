@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { HomePage, RoomPage } from '../pages';
 
 
@@ -14,9 +14,12 @@ const App = () => {
           exact />
 
         <Route
-          path="/room"
-          component={RoomPage}
-          />
+          path="/room/:id"
+            render ={({ match }) => {
+              const { id } = match.params;
+              return <RoomPage  itemId = {id} />
+            }} />
+
       </Switch>
     </main>
   );

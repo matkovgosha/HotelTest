@@ -144,7 +144,7 @@ a{
 	font-size: 20px;
 	font-weight: bold;
 	color: #F2994A;
-	margin-left: 35px;
+	margin-left: 30px;
 }
 
 .SelectionPanel .DaysChoice hr{
@@ -178,6 +178,9 @@ a{
 }
 
 .SelectionPanel .Sum{
+	width: 100%;
+	text-align: right;
+	float:right;
 	font-weight: bold;
 	font-size: 24px;
 }
