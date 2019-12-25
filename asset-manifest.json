@@ -1,7 +1,7 @@
 {
   "main.css": "/HotelTest/static/css/main.ed690153.chunk.css",
-  "main.js": "/HotelTest/static/js/main.857b79f9.chunk.js",
-  "main.js.map": "/HotelTest/static/js/main.857b79f9.chunk.js.map",
+  "main.js": "/HotelTest/static/js/main.34a5cd6f.chunk.js",
+  "main.js.map": "/HotelTest/static/js/main.34a5cd6f.chunk.js.map",
   "static/js/1.a45fd1a4.chunk.js": "/HotelTest/static/js/1.a45fd1a4.chunk.js",
   "static/js/1.a45fd1a4.chunk.js.map": "/HotelTest/static/js/1.a45fd1a4.chunk.js.map",
   "runtime~main.js": "/HotelTest/static/js/runtime~main.0867bed4.js",
@@ -9,6 +9,6 @@
   "static/media/short-header.css": "/HotelTest/static/media/Head.924d77c6.png",
   "static/css/main.ed690153.chunk.css.map": "/HotelTest/static/css/main.ed690153.chunk.css.map",
   "index.html": "/HotelTest/index.html",
-  "precache-manifest.60eaf88bed6be8e4e5a40b9b7eb0dd17.js": "/HotelTest/precache-manifest.60eaf88bed6be8e4e5a40b9b7eb0dd17.js",
+  "precache-manifest.40bbb9fd48d5f90a7e6c379a1390f189.js": "/HotelTest/precache-manifest.40bbb9fd48d5f90a7e6c379a1390f189.js",
   "service-worker.js": "/HotelTest/service-worker.js"
 }
