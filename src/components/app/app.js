@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { HomePage, RoomPage } from '../pages';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { HomePage, RoomPage, AdminPage } from '../pages';
 
 
 
@@ -20,6 +20,12 @@ const App = () => {
               return <RoomPage  itemId = {id} />
             }} />
 
+        <Route 
+          path="/admin"
+          component={AdminPage}
+          exact />  
+           
+        <Redirect to = "/" />
       </Switch>
     </main>
   );

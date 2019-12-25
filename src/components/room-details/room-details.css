@@ -23,7 +23,7 @@ a{
 
 .Main-Info{
 	display:flex;
-	flex-wrap:nowrap;
+	flex-wrap:wrap;
 	justify-content: space-between;
 	color: #4F4F4F;
 } 

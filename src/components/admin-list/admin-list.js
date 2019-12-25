@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RoomListItem from '../room-list-item';
+import AdminListItem from '../admin-list-item';
  import { connect } from 'react-redux';
 
  import { withHotelstoreService } from '../hoc';
@@ -9,7 +9,7 @@ import RoomListItem from '../room-list-item';
  import Spinner from '../spinner';
  import ErrorIndicator from '../error-indicator';
 
-class RoomList extends Component {
+class AdminList extends Component {
 
   componentDidMount() {
     const {
@@ -52,7 +52,7 @@ class RoomList extends Component {
                 {
                   selectedRooms.map((room) => {
                       return (
-                         <RoomListItem key={room.id} room={room}/>
+                         <AdminListItem key={room.id} room={room}/>
                       )
                   })
                 }
@@ -76,4 +76,4 @@ const mapDispatchToProps = {
 export default compose(
   withHotelstoreService(),
   connect(mapStateToProps, mapDispatchToProps)
-)(RoomList);
+)(AdminList);

@@ -171,6 +171,7 @@ body {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  flex-wrap:wrap;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
@@ -234,6 +235,21 @@ body {
   color: #4F4F4F;
 }
 
+.items .item .book-text{
+  margin-top: calc(30%);
+  text-align: center;
+  color: #EB5757;
+  font-weight: bold;
+}
+
+
+.items .item .free-text{
+  margin-top: calc(30%);
+  text-align: center;
+  color: #27AE60;
+  font-weight: bold;
+}
+
 .show-all {
   cursor: pointer;
   margin-top: 20px;
@@ -248,6 +264,22 @@ body {
 .show-all img {
   margin-bottom: -4px;
   margin-left: 15px;
+}
+
+.CancelButton{
+  float:right;
+  cursor:pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #F2994A;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 15px;
+  margin-right: 18px;
 }
 
 .footer {

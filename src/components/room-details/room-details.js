@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import { withHotelstoreService } from '../hoc';
+import { roomBook } from '../../actions';
+
 import { compose } from '../../utils';
 import { connect } from 'react-redux';
 
@@ -18,8 +20,8 @@ class RoomDetails extends Component {
 
   componentDidMount() {
 
-    const {hotelstoreService, itemId} = this.props;
-    const {price} = hotelstoreService.getRoom(parseInt(itemId.itemId));
+    const {room} = this.props;
+    const {price} = room;
     //const { SumPrice, DaysToBook } = this.state;
 
     this.setState({
@@ -35,7 +37,8 @@ class RoomDetails extends Component {
     let k3 = (document.getElementById('select3').value === 'true') ? 100 : 0;
 
     this.setState({
-      Price: this.state.StartPrice + k1 + k2 + k3 
+      Price: this.state.StartPrice + k1 + k2 + k3,
+      SumPrice: (this.state.StartPrice*this.state.DaysToBook) + (this.state.DaysToBook * k1) + (this.state.DaysToBook * k2) + (this.state.DaysToBook * k3) 
     })
   }
 
@@ -57,9 +60,9 @@ class RoomDetails extends Component {
 
   render() {
 
-  const {hotelstoreService, itemId} = this.props;  //удалить, добавить this
+  const {itemId, roomBook, room} = this.props;  //удалить, добавить this
 
-  const { title,coverImage} = hotelstoreService.getRoom(parseInt(itemId.itemId)); //это удалить и добавить в return this, coverImage не грузится
+  const { title,coverImage} = room; //это удалить и добавить в return this, coverImage не грузится
 
 //Поправить смазанную картинку
   return(
@@ -143,7 +146,7 @@ class RoomDetails extends Component {
             <p className = "Sum">{this.state.SumPrice}  &#36;</p>
             <p>Стоимость проживания</p>
           </div>
-          <button>Забронировать</button>
+          <Link to = "/" ><button onClick ={() => roomBook(itemId,this.state.DaysToBook)}>Забронировать</button></Link>
   			</div>
   		</div>
 	  </div>
@@ -152,13 +155,13 @@ class RoomDetails extends Component {
 }
 
 
-const mapStateToProps = ({ error }) => {
-  return { error };
+const mapStateToProps = ({ error, rooms }, ownProps) => {
+  return { error, room:rooms.find((item)=> item.id === parseInt(ownProps.itemId.itemId)) };
 };
 
 
 const mapDispatchToProps = {
-
+    roomBook
 };
 
 export default compose(

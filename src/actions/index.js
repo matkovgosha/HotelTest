@@ -19,8 +19,40 @@ const roomsError = (error) => {
   };
 };
 
+const roomBook = (roomId,days) => {
+  return {
+    type: 'ROOM_BOOKED',
+    payload: roomId,
+    days: days
+  };
+};
+
+const roomCancel = (roomId) => {
+  return {
+    type: 'ROOM_CANCEL',
+    payload: roomId
+  };
+};
+
+const AdminIn = () => {
+  return {
+    type: 'ENTER_SANDMAN'
+  }
+};
+
+const AdminOut = () => {
+  return {
+    type: 'EXIT_SANDMAN'
+  }
+};
+
+
 export {
   roomsLoaded,
   roomsRequested,
-  roomsError
+  roomsError,
+  roomBook,
+  AdminIn,
+  AdminOut,
+  roomCancel
 };

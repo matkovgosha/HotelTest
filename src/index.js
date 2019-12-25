@@ -12,6 +12,7 @@ import store from './store';
 
 const hotelstoreService = new HotelstoreService();
 
+
 ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundry>
